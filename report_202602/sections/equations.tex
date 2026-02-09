@@ -1,0 +1,55 @@
+% ---------- Equations ----------
+\section{Equations}\label{sec:equations}
+
+% --- Inline equation ---
+An inline equation example: the energy--mass relation is $E = mc^{2}$.
+
+% --- Single numbered equation ---
+A standalone numbered equation:
+\begin{equation}\label{eq:quadratic}
+  x = \frac{-b \pm \sqrt{b^{2} - 4ac}}{2a}
+\end{equation}
+
+% --- Multi-line aligned equations ---
+A system of aligned equations using \texttt{align}:
+\begin{align}
+  \nabla \cdot  \mathbf{E} &= \frac{\rho}{\varepsilon_0}       \label{eq:gauss} \\
+  \nabla \cdot  \mathbf{B} &= 0                                  \label{eq:gauss_mag} \\
+  \nabla \times \mathbf{E} &= -\frac{\partial \mathbf{B}}{\partial t} \label{eq:faraday} \\
+  \nabla \times \mathbf{B} &= \mu_0 \mathbf{J}
+    + \mu_0 \varepsilon_0 \frac{\partial \mathbf{E}}{\partial t} \label{eq:ampere}
+\end{align}
+
+% --- Equation with cases ---
+A piecewise function:
+\begin{equation}\label{eq:piecewise}
+  f(x) =
+  \begin{cases}
+    x^{2},  & \text{if } x \geq 0, \\
+    -x^{2}, & \text{if } x < 0.
+  \end{cases}
+\end{equation}
+
+% --- Matrix ---
+A matrix expression:
+\begin{equation}\label{eq:matrix}
+  \mathbf{A} =
+  \begin{bmatrix}
+    a_{11} & a_{12} & a_{13} \\
+    a_{21} & a_{22} & a_{23} \\
+    a_{31} & a_{32} & a_{33}
+  \end{bmatrix}
+\end{equation}
+
+% --- Theorem / Definition ---
+\begin{definition}[Convexity]\label{def:convex}
+  A function $f: \mathbb{R}^n \to \mathbb{R}$ is \emph{convex} if for all
+  $\mathbf{x}, \mathbf{y} \in \mathbb{R}^n$ and $\lambda \in [0,1]$:
+  \begin{equation}
+    f\bigl(\lambda \mathbf{x} + (1-\lambda)\mathbf{y}\bigr)
+    \leq \lambda f(\mathbf{x}) + (1-\lambda) f(\mathbf{y}).
+  \end{equation}
+\end{definition}
+
+Cross-referencing: \Cref{eq:quadratic} shows the quadratic formula;
+\Cref{eq:gauss,eq:faraday} are Maxwell's equations.

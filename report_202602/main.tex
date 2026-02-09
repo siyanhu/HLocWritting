@@ -1,0 +1,74 @@
+\documentclass[12pt, a4paper, onecolumn]{article}
+
+% ---------- Packages ----------
+% Layout & formatting
+\usepackage[margin=1in]{geometry}
+\usepackage{setspace}
+\onehalfspacing
+\usepackage{parskip}
+
+% Math
+\usepackage{amsmath, amssymb, amsthm}
+
+% Graphics
+\usepackage{graphicx}
+\usepackage{subcaption}
+\usepackage{float}
+
+% Tables
+\usepackage{booktabs}
+\usepackage{multirow}
+\usepackage{array}
+
+% Algorithms / pseudocode
+\usepackage{algorithm}
+\usepackage{algpseudocode}
+
+% References & links
+\usepackage[hidelinks]{hyperref}
+\usepackage{cleveref}
+\usepackage[numbers]{natbib}
+
+% Misc
+\usepackage{lipsum} % placeholder text, remove in final version
+
+% ---------- Theorem environments ----------
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{definition}[theorem]{Definition}
+
+% ---------- Title ----------
+\title{Report Title}
+\author{
+  Author Name \\
+  \textit{Affiliation} \\
+  \texttt{email@example.com}
+}
+\date{\today}
+
+% ==========================================================
+\begin{document}
+
+\maketitle
+
+\begin{abstract}
+  This document serves as a template for academic reports prepared with
+  \LaTeX{} and compiled on Overleaf. It demonstrates equations,
+  single and multiple figures, tables, and pseudocode blocks in a
+  single-column layout.
+\end{abstract}
+
+\tableofcontents
+\newpage
+
+% ---------- Section files ----------
+\input{sections/equations}
+\input{sections/figures}
+\input{sections/tables}
+\input{sections/algorithms}
+
+% ---------- Bibliography ----------
+\bibliographystyle{plainnat}
+\bibliography{references}
+
+\end{document}
