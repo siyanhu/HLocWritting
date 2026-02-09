@@ -50,28 +50,15 @@
 \newtheorem{lemma}[theorem]{Lemma}
 \newtheorem{definition}[theorem]{Definition}
 
+% ---------- Title ----------
+\title{Report Title}
+\author{Author Name \\ \textit{Affiliation} \\ \texttt{email@example.com}}
+\date{\today}
+
 % ==========================================================
 \begin{document}
 
-% ---------- Clean title page ----------
-\begin{titlepage}
-  \centering
-  \vspace*{\fill}
-  {\LARGE\bfseries Report Title \par}
-  \vspace{1.5cm}
-  {\large Author Name \par}
-  \vspace{0.4cm}
-  {\normalsize \textit{Affiliation} \par}
-  \vspace{0.4cm}
-  {\normalsize \texttt{email@example.com} \par}
-  \vspace{2cm}
-  {\normalsize Last edited: \today \par}
-  \vspace*{\fill}
-\end{titlepage}
-
-% ---------- Table of contents ----------
-\tableofcontents
-\newpage
+\maketitle
 
 % ---------- Section files ----------
 \input{sections/equations}
