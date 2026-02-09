@@ -1,0 +1,68 @@
+\documentclass[11pt, a4paper, onecolumn]{article}
+
+% ---------- Packages ----------
+% Layout & formatting
+\usepackage[margin=0.9in]{geometry}
+\usepackage{setspace}
+\setstretch{1.15}
+\usepackage[skip=6pt plus2pt]{parskip}
+\usepackage{titlesec}
+
+% Compact section headings
+\titlespacing*{\section}{0pt}{1.2ex plus 0.4ex minus 0.2ex}{0.6ex plus 0.2ex}
+\titlespacing*{\subsection}{0pt}{1.0ex plus 0.3ex minus 0.2ex}{0.4ex plus 0.1ex}
+\titlespacing*{\subsubsection}{0pt}{0.8ex plus 0.2ex minus 0.1ex}{0.3ex plus 0.1ex}
+
+% Math
+\usepackage{amsmath, amssymb, amsthm}
+
+% Graphics
+\usepackage{graphicx}
+\usepackage{subcaption}
+\usepackage{float}
+
+% Tables
+\usepackage{booktabs}
+\usepackage{multirow}
+\usepackage{array}
+
+% Algorithms / pseudocode
+\usepackage{algorithm}
+\usepackage{algpseudocode}
+
+% Compact captions
+\usepackage[font=small, labelfont=bf, skip=4pt]{caption}
+
+% Compact lists
+\usepackage{enumitem}
+\setlist{nosep, leftmargin=*}
+
+% References & links
+\usepackage[hidelinks]{hyperref}
+\usepackage{cleveref}
+\usepackage[numbers]{natbib}
+
+% Misc
+\usepackage{lipsum} % placeholder text, remove in final version
+
+% ---------- Theorem environments ----------
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{definition}[theorem]{Definition}
+
+% ---------- Title ----------
+\title{Project Report: Tramway}
+\author{Siyan HU}
+\date{\today}
+
+\begin{document}
+
+\maketitle
+
+\section{Introduction}\label{sec:introduction}
+
+The whole system of Tramway 3D reconstruction and localization is a multi-camera and visual localization framework that reconstructs 3D scenes from a synchronized 6-camera
+rig mounted on a tramway vehicle, and then localize query images (captured by iPhone) within that reconstruction. The entire system is built upon the HLoc (Hierarchical Localization) framework and uses COLMAP as its core reconstruction engine.
+
+
+\end{document}
