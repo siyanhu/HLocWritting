@@ -60,13 +60,234 @@
 
 \maketitle
 
-% ---------- Section files ----------
-\input{sections/equations}
-\input{sections/figures}
-\input{sections/tables}
-\input{sections/algorithms}
+% ============================================================
+%  SECTION 1 — Equations
+% ============================================================
+\section{Equations}\label{sec:equations}
 
-% ---------- Bibliography ----------
+An inline equation example: the energy--mass relation is $E = mc^{2}$.
+
+A standalone numbered equation:
+\begin{equation}\label{eq:quadratic}
+  x = \frac{-b \pm \sqrt{b^{2} - 4ac}}{2a}
+\end{equation}
+
+A system of aligned equations:
+\begin{align}
+  \nabla \cdot  \mathbf{E} &= \frac{\rho}{\varepsilon_0}       \label{eq:gauss} \\
+  \nabla \times \mathbf{E} &= -\frac{\partial \mathbf{B}}{\partial t} \label{eq:faraday}
+\end{align}
+
+A piecewise function:
+\begin{equation}\label{eq:piecewise}
+  f(x) =
+  \begin{cases}
+    x^{2},  & \text{if } x \geq 0, \\
+    -x^{2}, & \text{if } x < 0.
+  \end{cases}
+\end{equation}
+
+A matrix:
+\begin{equation}\label{eq:matrix}
+  \mathbf{A} =
+  \begin{bmatrix}
+    a_{11} & a_{12} \\
+    a_{21} & a_{22}
+  \end{bmatrix}
+\end{equation}
+
+\begin{definition}[Convexity]\label{def:convex}
+  A function $f\colon \mathbb{R}^n \to \mathbb{R}$ is \emph{convex} if
+  $f(\lambda \mathbf{x} + (1-\lambda)\mathbf{y})
+   \leq \lambda f(\mathbf{x}) + (1-\lambda) f(\mathbf{y})$
+  for all $\mathbf{x},\mathbf{y}$ and $\lambda \in [0,1]$.
+\end{definition}
+
+Cross-referencing: \Cref{eq:quadratic} is the quadratic formula;
+\Cref{eq:gauss,eq:faraday} are Maxwell's equations.
+See Knuth~\cite{knuth1984} for typesetting conventions.
+
+% ============================================================
+%  SECTION 2 — Figures
+% ============================================================
+\section{Figures}\label{sec:figures}
+
+\subsection{Single Figure}
+\begin{figure}[htbp]
+  \centering
+  \includegraphics[width=0.65\textwidth]{example-image}
+  \caption{A single figure occupying 65\% of the text width.}
+  \label{fig:single}
+\end{figure}
+
+\subsection{Two Figures Side by Side}
+\begin{figure}[htbp]
+  \centering
+  \begin{subfigure}[b]{0.48\textwidth}
+    \centering
+    \includegraphics[width=\textwidth]{example-image-a}
+    \caption{Left subfigure.}
+    \label{fig:sub_a}
+  \end{subfigure}
+  \hfill
+  \begin{subfigure}[b]{0.48\textwidth}
+    \centering
+    \includegraphics[width=\textwidth]{example-image-b}
+    \caption{Right subfigure.}
+    \label{fig:sub_b}
+  \end{subfigure}
+  \caption{Two subfigures displayed side by side.}
+  \label{fig:two_side}
+\end{figure}
+
+\subsection{2$\times$2 Grid of Figures}
+\begin{figure}[htbp]
+  \centering
+  \begin{subfigure}[b]{0.48\textwidth}
+    \centering
+    \includegraphics[width=\textwidth]{example-image-a}
+    \caption{Top left.}\label{fig:grid_tl}
+  \end{subfigure}\hfill
+  \begin{subfigure}[b]{0.48\textwidth}
+    \centering
+    \includegraphics[width=\textwidth]{example-image-b}
+    \caption{Top right.}\label{fig:grid_tr}
+  \end{subfigure}
+
+  \vspace{0.5em}
+
+  \begin{subfigure}[b]{0.48\textwidth}
+    \centering
+    \includegraphics[width=\textwidth]{example-image-a}
+    \caption{Bottom left.}\label{fig:grid_bl}
+  \end{subfigure}\hfill
+  \begin{subfigure}[b]{0.48\textwidth}
+    \centering
+    \includegraphics[width=\textwidth]{example-image-b}
+    \caption{Bottom right.}\label{fig:grid_br}
+  \end{subfigure}
+  \caption{A 2$\times$2 grid of subfigures.}
+  \label{fig:grid}
+\end{figure}
+
+\subsection{Three Figures in a Row}
+\begin{figure}[htbp]
+  \centering
+  \begin{subfigure}[b]{0.31\textwidth}
+    \centering
+    \includegraphics[width=\textwidth]{example-image-a}
+    \caption{First.}\label{fig:tri_a}
+  \end{subfigure}\hfill
+  \begin{subfigure}[b]{0.31\textwidth}
+    \centering
+    \includegraphics[width=\textwidth]{example-image-b}
+    \caption{Second.}\label{fig:tri_b}
+  \end{subfigure}\hfill
+  \begin{subfigure}[b]{0.31\textwidth}
+    \centering
+    \includegraphics[width=\textwidth]{example-image-c}
+    \caption{Third.}\label{fig:tri_c}
+  \end{subfigure}
+  \caption{Three subfigures in a single row.}
+  \label{fig:triple}
+\end{figure}
+
+Cross-referencing: see \Cref{fig:single} for the single figure and
+\Cref{fig:sub_a,fig:sub_b} for the pair.
+Residual networks~\cite{he2016deep} are often visualised this way.
+
+% ============================================================
+%  SECTION 3 — Tables
+% ============================================================
+\section{Tables}\label{sec:tables}
+
+\subsection{Simple Table}
+\begin{table}[htbp]
+  \centering
+  \caption{Baseline comparison using \texttt{booktabs}.}
+  \label{tab:simple}
+  \begin{tabular}{lcc}
+    \toprule
+    Method   & Accuracy (\%) & Runtime (s) \\
+    \midrule
+    Baseline & 72.3          & 1.20        \\
+    Model A  & 85.1          & 2.45        \\
+    Model B  & \textbf{91.2} & 4.05        \\
+    \bottomrule
+  \end{tabular}
+\end{table}
+
+\subsection{Table with Multirow and Multicolumn}
+\begin{table}[htbp]
+  \centering
+  \caption{Results grouped by dataset.}
+  \label{tab:multi}
+  \begin{tabular}{ll cc}
+    \toprule
+    & & \multicolumn{2}{c}{\textbf{Metrics}} \\
+    \cmidrule(lr){3-4}
+    \textbf{Dataset} & \textbf{Method} & Precision & Recall \\
+    \midrule
+    \multirow{2}{*}{CIFAR-10}
+      & ResNet-18  & 0.92 & 0.90 \\
+      & VGG-16     & 0.89 & 0.87 \\
+    \midrule
+    \multirow{2}{*}{ImageNet}
+      & ResNet-50    & 0.81 & 0.79 \\
+      & EfficientNet & 0.84 & 0.82 \\
+    \bottomrule
+  \end{tabular}
+\end{table}
+
+Cross-referencing: \Cref{tab:simple} summarises baselines;
+\Cref{tab:multi} groups results by dataset.
+
+% ============================================================
+%  SECTION 4 — Algorithms
+% ============================================================
+\section{Algorithms}\label{sec:algorithms}
+
+\subsection{Simple Algorithm}
+\begin{algorithm}[htbp]
+  \caption{Binary Search}\label{alg:binary_search}
+  \begin{algorithmic}[1]
+    \Require Sorted array $A[1 \ldots n]$, target $t$
+    \Ensure Index $i$ with $A[i]=t$, or $-1$
+    \State $\ell \gets 1,\; r \gets n$
+    \While{$\ell \leq r$}
+      \State $m \gets \lfloor (\ell + r)/2 \rfloor$
+      \If{$A[m] = t$} \Return $m$
+      \ElsIf{$A[m] < t$} $\ell \gets m+1$
+      \Else{} $r \gets m-1$
+      \EndIf
+    \EndWhile
+    \State \Return $-1$
+  \end{algorithmic}
+\end{algorithm}
+
+\subsection{Training Loop}
+\begin{algorithm}[htbp]
+  \caption{Gradient Descent Training}\label{alg:training}
+  \begin{algorithmic}[1]
+    \Require Dataset $\mathcal{D}$, learning rate $\eta$, epochs $T$
+    \Ensure Trained parameters $\boldsymbol{\theta}^{*}$
+    \State Initialise $\boldsymbol{\theta}$ randomly
+    \For{$t = 1$ \textbf{to} $T$}
+      \For{each mini-batch $\mathcal{B} \subset \mathcal{D}$}
+        \State $\mathcal{L} \gets \textsc{ComputeLoss}(\boldsymbol{\theta}, \mathcal{B})$
+        \State $\boldsymbol{\theta} \gets \boldsymbol{\theta} - \eta \nabla_{\boldsymbol{\theta}} \mathcal{L}$
+      \EndFor
+    \EndFor
+    \State \Return $\boldsymbol{\theta}$
+  \end{algorithmic}
+\end{algorithm}
+
+Cross-referencing: \Cref{alg:binary_search} runs in $O(\log n)$;
+\Cref{alg:training} follows the standard procedure~\cite{goodfellow2016deep}.
+
+% ============================================================
+%  Bibliography
+% ============================================================
 \bibliographystyle{plainnat}
 \bibliography{references}
 

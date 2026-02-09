@@ -1,0 +1,9 @@
+**/*.log
+**/*.aux
+**/*.blg
+**/*.out
+**/*.pdf
+**/*.gz
+**/*.fls
+**/*.bbl
+**/*.fdb_latexmk
